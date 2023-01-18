@@ -164,7 +164,7 @@ ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_UNIQUE_EMAIL = True
 
 
-#loggers
+#logger
 
 LOGGING = {
     'version': 1,
