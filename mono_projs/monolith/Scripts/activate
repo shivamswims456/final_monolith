@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\adminServer\Desktop\final_monolith\monolith"
+VIRTUAL_ENV="C:\Users\Dell\Desktop\projects\monolith\final_monolith\mono_projs\monolith"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
