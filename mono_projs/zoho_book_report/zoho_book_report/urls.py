@@ -20,5 +20,6 @@ urlpatterns = [
 
     path('admin/', admin.site.urls),
     path('', include('django_sso.sso_service.urls')),
+    path('demo/', include('valuate.urls'))
 
 ]
