@@ -141,5 +141,5 @@ with open(os.path.join(SUPER_BASE, 'conf', 'servers', 'server.json'), 'r') as f:
 
 LOGIN_URL = SERVER['auth_sso_login_url'] 
 SSO_ROOT = SERVER['auth_sso_server_address']
-SSO_TOKEN = 'obEERDS11rXuqlg1u7q6dtODllIPSUcfH1xZSPkEGTb2IRwHl6vbsvME404zY6DWJk82jjwNQ6oJZKdfivDuq5gBvKqfo6o5fIdZiGl4wLK0HbXvfcJ2cIHa3EJZ2wIk'
+SSO_TOKEN = '9qIMr0nyIH8jFIwbLXI25hqe4QYZu9YdxJHfewP1J6H5dQnVCnBCi96fFSDpRFwrFl3Ig6tAfbmIV719ih13EXWQAgH1Tdhj0stKi21VPSqRtvNNBlWTmTYf6KKSjHpa'
 SESSION_COOKIE_NAME = 'zoho_book_report'
