@@ -1,5 +1,3 @@
 monolith/
-!monolith/Lib/site-packages/django_sso/*
-
 conf/
 settings.py
