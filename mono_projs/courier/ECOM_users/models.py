@@ -13,6 +13,8 @@ class ECOM_super_vendors(models.Model):
         
         return self.user.email
 
+        
+
 
 class ECOM_vendors(models.Model):
 

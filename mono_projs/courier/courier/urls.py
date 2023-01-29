@@ -18,6 +18,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('ecom/pincodes/', include('ECOM_pincodes.urls')),
+    path('courier/<str:vendor>/ecom/pincodes/', include('ECOM_pincodes.urls')),
     path('', include('django_sso.sso_service.urls')),
 ]

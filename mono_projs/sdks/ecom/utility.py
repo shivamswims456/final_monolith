@@ -2,6 +2,10 @@ import requests, json, xmltodict
 
 
 
+
+
+
+
 def __get_necessary__(kwargs, req_params):
 
         
@@ -21,7 +25,7 @@ def add_creds(django_ecom_obj, data, log_obj) -> dict:
 
 
     """
-    data.update({"username":django_ecom_obj["username"], "password":django_ecom_obj["password"]})
+    data.update({"username":django_ecom_obj.ecom_user, "password":django_ecom_obj.ecom_password})
 
     return data
 

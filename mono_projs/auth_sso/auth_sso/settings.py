@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_sso.sso_gateway',
-
+    'usermodify.apps.UsermodifyConfig',
     'django_db_logger',
     # 3rd party
     'allauth', # new
