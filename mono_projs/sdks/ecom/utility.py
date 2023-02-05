@@ -1,5 +1,5 @@
 import requests, json, xmltodict
-
+import logging
 
 
 
@@ -275,23 +275,30 @@ def fetch_pincodes(django_ecom_obj, log_obj) -> dict:
           "state": "Haryana", "date_of_discontinuance": "", "city_code": "ABA"}, ...]
     """
 
-    url = "https://api.ecomexpress.in/apiv2/pincodes/"
+    try:
+        
+        url = "https://api.ecomexpress.in/apiv2/pincodes/"
 
-    auth_data = add_creds(django_ecom_obj=django_ecom_obj, data={}, log_obj=log_obj)
+        auth_data = add_creds(django_ecom_obj=django_ecom_obj, data={}, log_obj=log_obj)
+
+        
+        resp = requests.post(url, auth_data)
+
+        if resp.status_code == 200:
+
+            result = {"goAhead":True, "data":resp.json()}
+
+
+        else:
+
+            result = {"goAhead":False, "data":resp.content}
+        
+
+    except Exception as e:
+
+        log_obj.exception(f"ECOM API fetch Error \n {e}", exc_info=True)
 
     
-    resp = requests.post(url, auth_data)
-
-    if resp.status_code == 200:
-
-        result = {"goAhead":True, "data":resp.json()}
-
-
-    else:
-
-        result = {"goAhead":False, "data":resp.content}
-
-
     return result
 
 
