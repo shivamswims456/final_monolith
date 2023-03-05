@@ -27,7 +27,7 @@ if settings.DEBUG:
 
 urlpatterns += [
     path('admin/', admin.site.urls),
-    path('courier/<str:vendor>/ecom/pincodes/', include('ECOM_pincodes.urls')),
+    path('courier/ecom/pincodes/', include('ECOM_pincodes.urls')),
     path('', include('django_sso.sso_service.urls')),
 ]
 

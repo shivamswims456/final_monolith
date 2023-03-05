@@ -8,7 +8,11 @@ um = get_user_model()
 
 @receiver(post_save, sender=um)
 def update_username_with_unique_number(sender, instance, created, **kwargs):
-
+    
+    """
+        signal for allocating userid to newlhy signed-in user
+    """
+    
     if created:
     
         while True:

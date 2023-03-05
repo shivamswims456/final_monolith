@@ -8,7 +8,6 @@ from django.http import HttpResponse
 from django.db import models
 from django.db.transaction import non_atomic_requests
 import json
-from copy import deepcopy
 
 ###################################################################
 #                   bulkImport  helpers start                     #
@@ -252,7 +251,6 @@ class multiModel(object):
         self.name_table_db = f"{self.app_name}_{self.table_name}"
 
     
-
     def remove(self):
 
         if self.__exists__():

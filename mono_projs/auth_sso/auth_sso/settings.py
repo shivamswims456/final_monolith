@@ -47,6 +47,9 @@ INSTALLED_APPS = [
     'allauth', # new
     'allauth.account', # new
     'allauth.socialaccount', # new
+    'dynamic_tables',
+    'modification_logs',
+    'organisations.apps.OrganisationsConfig'
 
 ]
 
@@ -79,7 +82,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'auth_sso.wsgi.application'
-\
+
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
@@ -90,8 +93,32 @@ DATABASES = {
         'OPTIONS':{
             'read_default_file':os.path.join(SUPER_BASE, 'conf', 'auth_sso', 'db', 'mysql.conf')
         }
+    },
+
+    'slave0':{
+    
+        'ENGINE': 'django.db.backends.mysql',
+        'OPTIONS':{
+            'read_default_file':os.path.join(SUPER_BASE, 'conf', 'auth_sso', 'db', 'slave0.conf')
+        }
+    },
+
+    'slave1':{
+    
+        'ENGINE': 'django.db.backends.mysql',
+        'OPTIONS':{
+            'read_default_file':os.path.join(SUPER_BASE, 'conf', 'auth_sso', 'db', 'slave1.conf')
+        }
     }
+
 }
+
+
+
+REPLICATED_DATABASE_SLAVES = ['slave0', 'slave1']
+#DATABASE_ROUTERS = ['django_replicated.router.ReplicationRouter']
+REPLICATED_DATABASE_DOWNTIME = 60
+REPLICATED_CHECK_STATE_ON_WRITE = True
 
 
 # Password validation
@@ -196,4 +223,4 @@ LOGGING = {
     }
 }
 
-SSO_SUBORDINATE_COMMUNICATION_TIMEOUT = 1
+SSO_SUBORDINATE_COMMUNICATION_TIMEOUT = 10

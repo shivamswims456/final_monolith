@@ -38,7 +38,7 @@ class add_pincodes_skip_insert(async_cbv, View):
 
     permissions = {"all":['ECOM_pincodes.ECOM_pincodes_bulk_add']}
 
-    def sync_get(self, request, vendor):
+    def sync_get(self, request):
 
         response = HttpResponse('You are not a super vendor', status=401)
 
@@ -57,9 +57,9 @@ class add_pincodes_skip_insert(async_cbv, View):
 
     @async_return_login    #shadow async version of login_required
     @async_check_required_permissions
-    async def get(self, request, vendor):
+    async def get(self, request):
 
-        async_get = await sync_to_async(self.sync_get)(request, vendor)
+        async_get = await sync_to_async(self.sync_get)(request)
 
         response = HttpResponse(pin_errors["NO_SUPER_VENDOR"], status = 400)
 
@@ -77,7 +77,7 @@ class add_pincodes_skip_summary(async_cbv, View):
 
     permissions = {"all":['ECOM_pincodes.ECOM_pincodes_bulk_add']}
 
-    def sync_get(self, request, vendor):
+    def sync_get(self, request):
 
         response = HttpResponse('You are not a super vendor', status=401)
 
@@ -96,9 +96,9 @@ class add_pincodes_skip_summary(async_cbv, View):
 
     @async_return_login    #shadow async version of login_required
     @async_check_required_permissions
-    async def get(self, request, vendor):
+    async def get(self, request):
 
-        async_get = await sync_to_async(self.sync_get)(request, vendor)
+        async_get = await sync_to_async(self.sync_get)(request)
 
         response = HttpResponse(pin_errors["NO_SUPER_VENDOR"], status = 400)
 
@@ -114,7 +114,7 @@ class add_pincodes_skip(async_cbv, View):
 
     permissions = {"all":['ECOM_pincodes.ECOM_pincodes_bulk_add']}
 
-    def sync_get(self, request, vendor):
+    def sync_get(self, request):
 
         response = HttpResponse('You are not a super vendor', status=401)
 
@@ -134,9 +134,9 @@ class add_pincodes_skip(async_cbv, View):
         
     @async_return_login    #shadow async version of login_required
     @async_check_required_permissions
-    async def get(self, request, vendor):
+    async def get(self, request):
 
-        async_get = await sync_to_async(self.sync_get)(request, vendor)
+        async_get = await sync_to_async(self.sync_get)(request)
 
         response = HttpResponse(pin_errors["NO_SUPER_VENDOR"], status = 400)
 
