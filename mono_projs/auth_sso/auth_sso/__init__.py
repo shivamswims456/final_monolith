@@ -23,4 +23,10 @@ import pymysql
 pymysql.install_as_MySQLdb()
 from dynamic_tables import init_patch
 
+from django.conf import settings
+import auth_sso.stage_load
+
+
+
+
 

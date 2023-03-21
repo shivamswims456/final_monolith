@@ -49,18 +49,27 @@ INSTALLED_APPS = [
     'allauth.socialaccount', # new
     'dynamic_tables',
     'modification_logs',
-    'organisations.apps.OrganisationsConfig'
 
+
+    'n_app_factory',
+    'rest_framework'
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'n_app_factory.middleware.nameBasedBlocking',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
 ]
 
 ROOT_URLCONF = 'auth_sso.urls'
@@ -224,3 +233,8 @@ LOGGING = {
 }
 
 SSO_SUBORDINATE_COMMUNICATION_TIMEOUT = 10
+APP_SUBLEVELS = ['CustomerLevel', 'ApplicationLevel', 'OperationLevel']
+CICD_STAGE = "DEV"
+#[DEV, STAGE, BETA, PROD]
+APP_NAMES = []
+MODELS_DENIED = {}

@@ -1,3 +1,7 @@
+##adminUser
+admin sethu@gmail.com
+Frooti@30   
+
 ##Packages
 django_sso package should be loaded from monolith
 

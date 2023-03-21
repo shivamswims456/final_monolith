@@ -7,6 +7,9 @@ from django.db.utils import DEFAULT_DB_ALIAS, load_backend
 
 
 
+
+
+
 def create_connection(alias=DEFAULT_DB_ALIAS):
     #https://stackoverflow.com/a/56733500/15078316
     db = connections.databases[alias]
